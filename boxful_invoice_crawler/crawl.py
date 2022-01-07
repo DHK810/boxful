@@ -17,22 +17,22 @@ with open("invoicesasdf.csv","w",newline='') as f:
     driver = webdriver.Chrome(executable_path="C:/Users/boxful/Desktop/crawl/chromedriver.exe")
 
     driver.get('https://www.boxful.kr/ko/log-in')
-    time.sleep(2) # Let the user actually see something!
+    time.sleep(2)
 
     driver.find_element_by_name('username').send_keys('***')
     driver.find_element_by_name('password').send_keys('***')
     driver.find_element_by_xpath('//*[@id="box1"]/div/div[4]/form/fieldset/div[3]/button').click()
-    time.sleep(2) # Let the user actually see something!
+    time.sleep(2)
 
     driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/ul/li[5]/a').click()
-    time.sleep(2) # Let the user actually see something!
+    time.sleep(2)
 
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div/input').click()
     time.sleep(2)
     driver.find_element_by_xpath('/html/body/div[5]/div[1]/div[1]/ul/li[2]').click()
-    time.sleep(3) # Let the user actually see something!
+    time.sleep(3)
 
-    for i in range(start_page,end_page): #수기로 가져올 것
+    for i in range(start_page,end_page):
 
         if count <= 5:
             driver.find_element_by_xpath('/html/body/div[1]/div[4]/div[3]/div/ul/li['+str(count)+']').click()
@@ -165,4 +165,3 @@ with open("invoicesasdf.csv","w",newline='') as f:
                     continue
             count += 1
     f.close()
-# headers = ['invoice_id','location','name','email','Amount','outstandingamount','status','txID','created']
